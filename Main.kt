@@ -4,4 +4,6 @@ fun main(args: Array<String>) {
     val menu = Menu(arrayListOf(MenuGroup(arrayListOf(), arrayListOf(MenuItem("salad")))))
 
     println(menu.groups)
+    println(menu.findItem("salad"))
+    println(menu.findItem("sandwich"))
 }
