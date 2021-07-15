@@ -2,9 +2,7 @@ package src.domain
 
 import kotlin.math.min
 
-class MenuItem(name: String) {
-    val name = name
-
+class MenuItem(val name: String) {
     fun EditDistance(target: String): Int {
         var memo = arrayOf<Array<Int>>()
         for (i in 0..6) {

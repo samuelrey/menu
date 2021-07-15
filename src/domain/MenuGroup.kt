@@ -1,9 +1,6 @@
 package src.domain
 
-class MenuGroup(subgroups: List<MenuGroup>, items: List<MenuItem>) {
-    val subgroups = subgroups
-    val items = items
-
+class MenuGroup(private val subgroups: List<MenuGroup>, private val items: List<MenuItem>) {
     fun findItem(name: String): MenuItem? {
         for (i in items) {
             if (name == i.name) {

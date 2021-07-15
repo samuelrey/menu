@@ -1,8 +1,6 @@
 package src.domain
 
-class Menu(groups: List<MenuGroup>) {
-    val groups = groups
-
+class Menu(private val groups: List<MenuGroup>) {
     fun findItem(name: String): MenuItem? {
         for (g in groups) {
             val item = g.findItem(name)
