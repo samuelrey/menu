@@ -1,4 +1,8 @@
 META-INF
+out
+
 .idea
+*.iml
+
 *.class
 *.jar
