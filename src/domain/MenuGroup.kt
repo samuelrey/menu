@@ -17,4 +17,18 @@ class MenuGroup(private val subgroups: List<MenuGroup>, private val items: List<
 
         return null
     }
+
+    fun findAllItemDistances(target: String): Map<MenuItem, Int> {
+        val out = hashMapOf<MenuItem, Int>()
+        for (i in items)
+            out[i] = i.EditDistance(target)
+
+        // Stitch together the item edit distances from subgroups.
+        for (sg in subgroups) {
+            val new = findAllItemDistances(target)
+            out.putAll(new)
+        }
+
+        return out
+    }
 }

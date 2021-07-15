@@ -2,7 +2,9 @@ import src.domain.*
 
 fun main(args: Array<String>) {
     // TODO fetch menu from database
-    val menu = Menu(arrayListOf(MenuGroup(arrayListOf(), arrayListOf(MenuItem("salad")))))
+    val mi = arrayListOf(MenuItem("salad"), MenuItem("burger"), MenuItem("dallas"))
+    val mg = MenuGroup(arrayListOf(), mi)
+    val menu = Menu(arrayListOf(mg))
 
     // TODO move into tests
     var item = menu.findItem("salad")
@@ -12,4 +14,7 @@ fun main(args: Array<String>) {
     item = menu.findItem("sandwich")
     if (item != null)
         println("Item should be null")
+
+    val distanceByItem = mg.findAllItemDistances("dallas")
+    println(distanceByItem.entries)
 }
