@@ -26,7 +26,7 @@ class MenuGroup(private val subgroups: List<MenuGroup>, private val items: List<
         // Stitch together the item edit distances from subgroups.
         for (sg in subgroups) {
             val new = findAllItemDistances(target)
-            out.putAll(new)
+            out += new
         }
 
         return out

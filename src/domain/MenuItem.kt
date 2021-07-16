@@ -5,9 +5,9 @@ import kotlin.math.min
 class MenuItem(val name: String) {
     fun EditDistance(target: String): Int {
         var memo = arrayOf<Array<Int>>()
-        for (i in 0..6) {
+        for (i in 0..name.length) {
             var row = arrayOf<Int>()
-            for (j in 0..6) {
+            for (j in 0..target.length) {
                 row += -1
             }
             memo += row
